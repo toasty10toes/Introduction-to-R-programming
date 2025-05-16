@@ -3,13 +3,20 @@
 Welcome! This repository will help you get started with R and RStudio for data analysis. It includes step-by-step setup instructions and example R projects to introduce basic data manipulation and visualization, using biological/environmental data examples.
 
 ## Installing R and RStudio
-You need to install R (the programming language) and RStudio (an IDE for using R). Both are free. Install R first, then RStudio. Here’s how:
+You need to install R (the programming language) and RStudio (an IDE for using R). Both are free. Install R first, then RStudio.
 
 **Windows:**
-Go to CRAN (the Comprehensive R Archive Network) and click “Download R for Windows”. Then click “base” (for the base system). Finally, download the latest R installer (the link will say something like “Download R x.x.x for Windows”) and run the .exe installer
 
-. Follow the setup wizard (you can accept default options)
-. Next, install RStudio Desktop. Go to the official RStudio (Posit) download page and download RStudio Desktop for Windows (the site usually auto-detects your OS). Run the RStudio installer and follow the prompts to install
+*Installing program R*
+  1. Go to the Comprehensive R Archive Network (https://cran.r-project.org/)
+  2. Click “Download R for Windows”.
+  3. Click “base” (for the base system).
+  4. Finally, download the latest R installer (the link will say something like “Download R x.x.x for Windows”) and run the .exe installer
+  5. Follow the setup wizard (you can accept default options)
+
+*Installing R Studio*
+  1. Go to the official RStudio (Posit) download page and download RStudio Desktop for Windows (the site usually auto-detects your OS).
+  2. Run the RStudio installer and follow the prompts to install
 
 **macOS:**
 Go to CRAN and click “Download R for (Mac) OS X”. Download the latest R .pkg file for macOS and open it. Follow the installer steps to install R (defaults are fine)
