@@ -8,11 +8,11 @@ You need to install R (the programming language) and RStudio (an IDE for using R
 **Windows:**
 
 *Installing program R*
-  1. Go to the Comprehensive R Archive Network (https://cran.r-project.org/)
+  1. Go to the Comprehensive R Archive Network (https://cran.r-project.org/).
   2. Click “Download R for Windows”.
   3. Click “base” (for the base system).
-  4. Finally, download the latest R installer (the link will say something like “Download R x.x.x for Windows”) and run the .exe installer
-  5. Follow the setup wizard (you can accept default options)
+  4. Finally, download the latest R installer (the link will say something like “Download R x.x.x for Windows”) and run the .exe installer.
+  5. Follow the setup instructions (you can accept default options).
 
 *Installing R Studio*
   1. Go to the official RStudio (Posit) download page and download RStudio Desktop for Windows (the site usually auto-detects your OS).
