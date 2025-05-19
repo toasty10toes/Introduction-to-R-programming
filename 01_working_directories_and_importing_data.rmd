@@ -12,30 +12,51 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 This R Markdown document is designed as an interactive tutorial for environmental science interns with no prior programming experience. The goal of this script is to give the intern a basic understanding of how to set up their working environment in R, read in a CSV file, and subset data using base R functions. The intern will learn how to navigate the file system, import data, and manipulate it for analysis.
 
+## Assignment Operators
+
+Before we dive into the details, let's clarify what an assignment operator is. In R, you store (assign) values into variables so you can use them later. There are two common assignment operators:
+
+-   **`<-`**: The classic, preferred operator in most R style guides.
+-   **`=`**: An alternative that works the same way in most contexts. Many R coders have strong feelings about not using this operator, but it is widely used in other programming languages.
+
+Examples:
+
+```{r}
+# Using <-
+x <- 10    # assigns the value 10 to variable x
+
+# Using =
+y = 5      # assigns the value 5 to variable y
+
+# You can then use these variables:
+sum_xy <- x + y  # sum_xy now holds 15
+print(sum_xy)  
+```
+
 # 1. Working Directory and File Paths
 
 Every time you run R, it has a **current working directory** (CWD). When you use relative paths (e.g., `"data/file.csv"`), R looks for that file inside the CWD.
 
 **Check CWD** with:
 
-```{r read-base}
+```{r}
 
 getwd()
 
 ```
 
-
 **Change CWD** with:
 
-```{r read-base}
+```{r user-exersise}
 
-setwd("/path/to/your/project")
+setwd("your/path/here")
+# Replace NA with the path to your working directory
 
 ```
 
 **Build file paths** There are several ways to create file paths. You can use `file.path()` to create paths that are compatible with your operating system. This is especially useful when sharing code across different platforms (Windows, macOS, Linux).You can also just write it all out manually, which is less flexible but sometimes easier to read.
 
-```{r read-base}
+```{r}
 data_path_manual <- "data/temperature_data.csv"
 data_path_helper <- file.path("path", "temperature_data.csv")
 
@@ -45,12 +66,11 @@ print('They are the same!! YAY!')
 
 ```
 
-
 This goes to show that in coding, like many other aspects of life, there are many ways to do the same thing.
 
 # 2. Reading a CSV File
 
-You can read a CSV file using `read.csv()`:
+You can read a CSV file using `read.csv()`. For the input into `read.csv()` you only need to add the file path string.
 
 ```{r user-exersise}
 # Replace with your actual file path replicating the example above
@@ -61,7 +81,7 @@ if (is.na(file_path)) {
 }
 # Read the data into R
 
-data_frame <- read.csv(file_path)
+data_frame <- 
 
 # View the first few rows
 display <- head(data_frame)
@@ -72,8 +92,8 @@ display
 
 You can subset rows and columns using the `[` operator and logical conditions.
 
-```
-new_df <- df[rows, columns]
+```         
+subsetted_data_frame <- data_frame[rows, columns]
 ```
 
 -   **`df`** is your original data frame.
@@ -82,7 +102,7 @@ new_df <- df[rows, columns]
     -   A vector of column names (`c("col1", "col2")`),
     -   Numeric indices (e.g., `1:3` for the first three columns), or
     -   `TRUE` to keep all columns.
-    
+
 Just remember that when indexing, it is rows then columns.
 
 ## Operators Used
@@ -101,6 +121,7 @@ Just remember that when indexing, it is rows then columns.
 ```
 
 **Subset columns** to only return the variable `temperature_celcius`:
+
 ```{r subset-cols}
 
     data_frame_column_subset <- data_frame[, c("temperature_celcius")]
@@ -110,15 +131,15 @@ Just remember that when indexing, it is rows then columns.
 
 **Combine row and column subsetting**: rows for site 5, only temperature:
 
-    ```{r user-exercise}
-    
-    df_trimmed <- NA
-    if(is.na(df_trimmed)) {
-      stop("Please subset the data_frame object using the tools described above.")
-    }
-    head(df_site5_temp)
-    
-    ```
+```{{r user-exercise}}
+
+df_trimmed <- NA
+if(is.na(df_trimmed)) {
+  stop("Please subset the data_frame object using the tools described above.")
+}
+head(df_site5_temp)
+
+```
 
 ------------------------------------------------------------------------
 
