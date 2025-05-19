@@ -47,6 +47,3 @@ You can now open the example R project files in RStudio!
 
 ## Getting Started with R: Example Projects
 This repository includes two example files to practice basic R skills. Open these in RStudio and step through the code and comments:
-example1.R – Demonstrates reading a CSV file into R, then basic data manipulation with dplyr: filtering rows, adding a new column, renaming columns, and selecting/subsetting data.
-example2.R – Demonstrates basic plotting with ggplot2: creating a scatter plot (with categories colored by species) and a histogram for exploratory data visualization.
-Each example uses a real-world inspired dataset (environmental or biological) and is heavily commented for clarity. Make sure to install the necessary packages (like dplyr, ggplot2) by running install.packages("tidyverse") or individually (install.packages("dplyr"), install.packages("ggplot2")) if you haven’t already, so that you can use these libraries in R. Below you can find the content of the example files with explanations:
