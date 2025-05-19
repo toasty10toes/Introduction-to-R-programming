@@ -1,0 +1,125 @@
+---
+title: "Working Directories, Paths, and Data Import in R"
+author: "Instructor"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Set global options
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+This R Markdown document is designed as an interactive tutorial for environmental science interns with no prior programming experience. The goal of this script is to give the intern a basic understanding of how to set up their working environment in R, read in a CSV file, and subset data using base R functions. The intern will learn how to navigate the file system, import data, and manipulate it for analysis.
+
+# 1. Working Directory and File Paths
+
+Every time you run R, it has a **current working directory** (CWD). When you use relative paths (e.g., `"data/file.csv"`), R looks for that file inside the CWD.
+
+**Check CWD** with:
+
+```{r read-base}
+
+getwd()
+
+```
+
+
+**Change CWD** with:
+
+```{r read-base}
+
+setwd("/path/to/your/project")
+
+```
+
+**Build file paths** There are several ways to create file paths. You can use `file.path()` to create paths that are compatible with your operating system. This is especially useful when sharing code across different platforms (Windows, macOS, Linux).You can also just write it all out manually, which is less flexible but sometimes easier to read.
+
+```{r read-base}
+data_path_manual <- "data/temperature_data.csv"
+data_path_helper <- file.path("path", "temperature_data.csv")
+
+print(paste("Manually written:",data_path_manual))
+print(paste("Using file.path:",data_path_helper))
+print('They are the same!! YAY!')
+
+```
+
+
+This goes to show that in coding, like many other aspects of life, there are many ways to do the same thing.
+
+# 2. Reading a CSV File
+
+You can read a CSV file using `read.csv()`:
+
+```{r user-exersise}
+# Replace with your actual file path replicating the example above
+file_path <- NA
+
+if (is.na(file_path)) {
+  stop("Please set the file_path variable to the path of your CSV file.")
+}
+# Read the data into R
+
+data_frame <- read.csv(file_path)
+
+# View the first few rows
+display <- head(data_frame)
+display
+```
+
+# 3. Subsetting Data (Base R)
+
+You can subset rows and columns using the `[` operator and logical conditions.
+
+```
+new_df <- df[rows, columns]
+```
+
+-   **`df`** is your original data frame.
+-   **`rows`** is a logical condition or numeric index specifying which rows to keep.
+-   **`columns`** is either:
+    -   A vector of column names (`c("col1", "col2")`),
+    -   Numeric indices (e.g., `1:3` for the first three columns), or
+    -   `TRUE` to keep all columns.
+    
+Just remember that when indexing, it is rows then columns.
+
+## Operators Used
+
+-   **`$`**: Extracts a single column as a vector. E.g., `df$site_number` gives all values in the `site_number` column.
+
+-   **`==`**: Tests for equality. `df$site_number == 3` returns a logical vector (`TRUE` when `site_number` is 3, otherwise `FALSE`).
+
+-   **`,`** inside `[` separates row and column indices: left side (before the comma) is rows, right side is columns.
+
+**Subset rows** where `site_number` equals 3:
+
+```{r subset-rows}
+    data_frame_site3 <- data_frame[data_frame$site_number == 3, ]
+    head(data_frame_site3)
+```
+
+**Subset columns** to only return the variable `temperature_celcius`:
+```{r subset-cols}
+
+    data_frame_column_subset <- data_frame[, c("temperature_celcius")]
+    head(data_frame_column_subset) # View the first few rows
+    
+```
+
+**Combine row and column subsetting**: rows for site 5, only temperature:
+
+    ```{r user-exercise}
+    
+    df_trimmed <- NA
+    if(is.na(df_trimmed)) {
+      stop("Please subset the data_frame object using the tools described above.")
+    }
+    head(df_site5_temp)
+    
+    ```
+
+------------------------------------------------------------------------
+
+*This document shows you how to read in a CSV and subset data using only base R, setting you up to explore and manipulate your environmental dataset.*
