@@ -5,7 +5,7 @@ Welcome! This repository will help you get started with R and RStudio for data a
 ## Installing R
 
 The following instructions to download R and RStudio are only applicable if you are using a personal laptop.
-If you are using a government laptop, please contact IT to download R and RStudio if it is already not installed. 
+If you are using a government laptop, please contact IT to download R and RStudio if it is not already installed. 
 
 You need to install R — the programming language — and RStudio — an integrated development environment for using R. Both are free. Install R first, then RStudio.
 Follow the directions for whatever operating system you are working under. 
