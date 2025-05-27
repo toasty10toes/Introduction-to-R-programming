@@ -10,8 +10,6 @@ If you are using a government laptop, please contact IT to download R and RStudi
 You need to install R — the programming language — and RStudio — an integrated development environment for using R. Both are free. Install R first, then RStudio.
 Follow the directions for whatever operating system you are working under. 
 
-As a quick note, an 
-
 **Windows:**
 
   1. Go to the Comprehensive R Archive Network (https://cran.r-project.org/).
