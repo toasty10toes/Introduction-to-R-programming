@@ -12,6 +12,40 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 This R Markdown document is designed as an interactive tutorial for environmental science interns with no prior programming experience. The goal of this script is to give the intern a basic understanding of how to set up their working environment in R, read in a CSV file, and subset data using base R functions. The intern will learn how to navigate the file system, import data, and manipulate it for analysis.
 
+
+## R Studio Orientation
+
+Each window in R studio gives you different information. Here is a brief description of the purpose of the most important windows.
+
+Source - this is where you write code that is saved as a file on your computer. You write messages to the computer and the computer executes your tasks.
+
+Console - this is where the computer talks to you. It tells you what code it is executing and gives you error messages if your code didn't work. You can write and execute code here but it won't be saved to a file.
+
+Environment - this shows you what objects you have created in your code with the ( <- ) operator. It is useful for keeping track of the names you've assigned.
+
+Files - this shows you the files stored in your current working directory
+
+Plots - this shows you plots that you execute in your code
+
+Packages - this tells you which packages are installed and loaded in your R session
+
+Help - this has information about packages and functions that can be helpful
+
+
+## Notation
+
+You will notice in the code below that there are sections of text and sections of code.
+The code chunks are encased in the following notation (```). These chunks can be run by clicking the green play button on the right hand side or by using the shortcut (ctrl + enter).
+
+We left notes for you in the code chunks. The # indicates to the computer that the line is a note for humans and is not code that it is supposed to run.
+
+```{r} 
+# This line is a note for humans
+
+# The line below is a command for the computer to execute
+print("congrats you ran this code chunk")
+``` 
+
 ## Assignment Operators
 
 Before we dive into the details, let's clarify what an assignment operator is. In R, you store (assign) values into variables so you can use them later. There are two common assignment operators:
