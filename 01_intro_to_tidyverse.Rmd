@@ -6,25 +6,110 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-## R Markdown
+This R Markdown document is designed as an interactive tutorial for environmental science interns with no prior programming experience. The goal of this script is to introduce the intern to the tidyverse. The intern will learn how to install packages, load libraries, use base R and tidyverse functions.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+These tutorials are in order.
+01 - You should complete this prior
+02 - intro to tidyverse
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+# 1. Installing Packages
+
+When you are using a new package for the first time you will have to install it on your computer.
+
+```{r}
+install.packages("tidyverse")
 ```
 
-## Including Plots
+# 2. Loading Libaries
 
-You can also embed plots, for example:
+After you install the package you have to load the library into your R session. You only have to install packages once, but you have to load the library every time that you open R studio. Typically most R scripts start off by loading all of their libraries at the top of the script.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+
+```{r}
+library(tidyverse)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# 3. Load Data
+
+Use the method that you learned in the previous lesson to load the temperature_data.csv into your working environment. We will be using this data to learn how to use tidyverse functions.
+
+```{r user-exercise}
+# Insert your file path
+file_path <- NA
+
+if (is.na(file_path)) {
+  stop("Please set the file_path variable to the path of your CSV file.")
+}
+
+# Read the data into R using read.csv()
+data_frame <- 
+
+```
+
+# 4. What is a function?
+
+The reason that we like using the tidyverse package is because it comes with a lot of useful functions that we can use to manipulate our data. So what is a function? A function takes an input and performs an operation. 
+
+There are many functions that are built into R, these are called Base R functions
+
+```{r}
+# Base R functions
+
+# this function (sum) gives you the sum of the temperature column values
+sum(data_frame$temperature_celcius)
+
+# this function gives you the number of rows in your dataframe
+length(data_frame$site_number)
+
+# this function gives you a string of the unique values in the site number column
+unique(data_frame$site_number)
+
+# you can also use multiple functions together
+# this line gives you the number of unique sites surveyed
+length(unique(data_frame$site_number))
+
+```
+5. Tidyverse Pipes
+
+The base R functions are great, but sometimes you need something more specific. You can write your own functions or you can use functions that are built by other people and stored in a package (like tidyverse).
+
+The tidyverse is similar to a language dialect. It uses a tool called a 'pipe' to pipe information (i.e. your data) into a function. %>% is the pipe command. The shortcut for this is ctrl + shift + m
+
+```{r user-exercise}
+# here is an example of piping your data into the function (select) and creating a new object (site3) that only has the data for site 3
+site3 <- data_frame %>%  
+  filter(site_number == 3)
+
+site3
+
+# filtering data is similar to subsetting
+# TASK: try to create a new dataframe for any observations of temperature > 20 degrees
+
+hot_20 <- data_frame %>% 
+  filter()
+
+hot_20
+
+# tidyverse makes it easier to use multiple functions together by using the pipe
+# the (group_by) function executes by specified group
+# the (mutate) function performs a calculation and stores the information in a new column in the dataframe 
+# this code groups by site, calculates the mean temperature at that site, and stores the mean temp in the new column named (site_avg_temp)
+data_frame <- data_frame %>% 
+  group_by(site_number) %>% 
+  mutate(site_avg_temp = mean(temperature_celcius))
+
+data_frame
+
+#TASK: use the mutate function to create a new column that shows the difference between the observed site temp and the average site temp
+
+data_frame <- data_frame %>% 
+  mutate()
+
+```
+
+
+
