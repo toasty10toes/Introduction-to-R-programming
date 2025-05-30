@@ -89,9 +89,6 @@ This goes to show that in coding, like many other aspects of life, there are man
 
 You can read a CSV file using `read.csv()`. For the input into `read.csv()` you only need to add the file path string.
 
-If you are working in an R project you will only need to include the file path starting from the project folder. For example if you have a csv stored in a Data folder in your project space you would read it in with:
-read.csv("Data/filename.csv")
-
 ```{r user-exersise}
 # Replace with your actual file path replicating the example above
 file_path <- NA
@@ -99,13 +96,16 @@ file_path <- NA
 if (is.na(file_path)) {
   stop("Please set the file_path variable to the path of your CSV file.")
 }
-# Read the data into R using read.csv
+# Read the data into R using read.csv()
 
 data_frame <- 
 
 # View the first few rows
 display <- head(data_frame)
 display
+
+# You can also view the data like an excel spreadsheet
+View(data_frame)
 ```
 
 # 3. Subsetting Data (Base R)
@@ -151,7 +151,7 @@ Just remember that when indexing, it is rows then columns.
 
 **Combine row and column subsetting**: rows for site 5, only temperature:
 
-```{{r user-exercise}}
+```{r user-exercise}
 
 df_trimmed <- NA
 if(is.na(df_trimmed)) {
