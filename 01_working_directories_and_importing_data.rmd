@@ -37,6 +37,21 @@ print(sum_xy)
 
 Every time you run R, it has a **current working directory** (CWD). When you use relative paths (e.g., `"data/file.csv"`), R looks for that file inside the CWD.
 
+**R Project**
+
+One way to set your working directory is to create an R Project file. 
+
+You can do this by opening R Studio and clicking 'File' 'New Project'. Select 'New Directory' and choose the folder on your computer where you would like the project to be stored. 
+
+Within the R Project you can create new R scripts for writing code and the working directory will automatically be set to the folder where your R Project is stored. 
+
+To open a new script in your project click 'file' 'new file' 'R script'. When you save the R script (ctrl S) make sure to save it in the same folder as your R Project.
+
+Whenever you want to work on the project, just double click on the R Project file and it will open R studio. 
+
+In the bottom right window of R studio, when you click on Files you can see all of the files saved in your project workspace. This makes it very easy to reference data and organize your project folders.
+
+
 **Check CWD** with:
 
 ```{r}
@@ -44,6 +59,8 @@ Every time you run R, it has a **current working directory** (CWD). When you use
 getwd()
 
 ```
+Word of caution: Some people don't like when scripts change the CWD because it might mess with other projects that they have open. Or change the CWD to a local path that isn't reproducible on someone elses computer. 
+https://stackoverflow.com/questions/13770304/risks-of-using-setwd-in-a-script
 
 **Change CWD** with:
 
@@ -71,6 +88,9 @@ This goes to show that in coding, like many other aspects of life, there are man
 # 2. Reading a CSV File
 
 You can read a CSV file using `read.csv()`. For the input into `read.csv()` you only need to add the file path string.
+
+If you are working in an R project you will only need to include the file path starting from the project folder. For example if you have a csv stored in a Data folder in your project space you would read it in with:
+read.csv("Data/filename.csv")
 
 ```{r user-exersise}
 # Replace with your actual file path replicating the example above
