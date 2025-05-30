@@ -59,7 +59,7 @@ In the bottom right window of R studio, when you click on Files you can see all 
 getwd()
 
 ```
-Word of caution: Some people don't like when scripts change the CWD because it might mess with other projects that they have open. Or change the CWD to a local path that isn't reproducible on someone elses computer. 
+Word of caution: Some people don't like when scripts change the CWD because it might mess with other projects that they have open, and local paths aren't always reproducible.
 https://stackoverflow.com/questions/13770304/risks-of-using-setwd-in-a-script
 
 **Change CWD** with:
@@ -75,7 +75,7 @@ setwd("your/path/here")
 
 ```{r}
 data_path_manual <- "data/temperature_data.csv"
-data_path_helper <- file.path("path", "temperature_data.csv")
+data_path_helper <- file.path("data", "temperature_data.csv")
 
 print(paste("Manually written:",data_path_manual))
 print(paste("Using file.path:",data_path_helper))
@@ -99,7 +99,7 @@ file_path <- NA
 if (is.na(file_path)) {
   stop("Please set the file_path variable to the path of your CSV file.")
 }
-# Read the data into R
+# Read the data into R using read.csv
 
 data_frame <- 
 
