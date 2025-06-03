@@ -50,7 +50,7 @@ This repository includes two example files to practice basic R skills. Open thes
 There are many free online resources for learning R. Here are some good ones.
   1. YaRrr The Pirates Guide to R (https://bookdown.org/ndphillips/YaRrr/)
   2. R Cookbook (https://rc2e.com/)
-  3. Many R Packages have helpful cheet sheets. Just google the package name and cheat sheet
+  3. Many R Packages have helpful cheat sheets. Just google the package name and cheat sheet
   4. Tidyverse is a really helpful and commonly used R package ([https://www.tidyverse.org/](https://r4ds.hadley.nz/))
        The style guide is  useful when you are first getting started (https://style.tidyverse.org/)
        ggplot is build into the tidyverse and is really helpful for data visualization (https://ggplot2.tidyverse.org/index.html)
